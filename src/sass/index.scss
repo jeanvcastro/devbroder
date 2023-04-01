@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap");
-@import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // Fonts
 $font-montserrat: "Montserrat", sans-serif;
@@ -85,6 +84,10 @@ $gutter-width: 48px;
     text-transform: uppercase;
   }
 
+  svg {
+    flex-shrink: 0;
+  }
+
   .clear-fix {
     height: 64px;
 
@@ -137,8 +140,8 @@ $gutter-width: 48px;
 
   .navbar {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     height: 80px;
     padding: 0 24px;
 
@@ -148,20 +151,20 @@ $gutter-width: 48px;
       font-weight: 500;
     }
 
-    #toggle-collapse {
+    button {
+      all: unset;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 48px;
       height: 48px;
       border-radius: 4px;
-      font-size: 24px;
+      cursor: pointer;
+    }
+
+    #toggle-collapse {
       background-color: $body-bg;
       color: $body-color;
-      border: none;
-      outline: none;
-      appearance: none;
-      cursor: pointer;
 
       &:hover {
         background-color: $body-contrast-100;
@@ -171,11 +174,23 @@ $gutter-width: 48px;
         background-color: $body-contrast-200;
       }
     }
+
+    #toggle-theme {
+      .icon {
+        display: none;
+
+        &.dark {
+          color: #000;
+        }
+
+        &.light {
+          color: #ffb200;
+        }
+      }
+    }
   }
 
   #collapse {
-    position: absolute;
-    top: 80px;
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -253,14 +268,14 @@ $gutter-width: 48px;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-shrink: 0;
         width: 140px;
         height: 140px;
         border-radius: 50%;
         background-color: $body-contrast-100;
 
-        i {
-          font-size: 36px;
+        svg {
+          width: 36px;
+          height: 36px;
         }
       }
 
@@ -282,8 +297,9 @@ $gutter-width: 48px;
         .icon {
           width: 80px;
           height: 80px;
-          i {
-            font-size: 24px;
+          svg {
+            width: 24px;
+            height: 24px;
           }
         }
 
@@ -354,14 +370,21 @@ html:not([data-theme]) {
 }
 
 [data-theme="dark"] {
-  @include page(#ff8000, #fff, #101010, #fff, #0c0c0c, #fff, #000, #fff);
+  @include page(#ff8000, #fff, #1c1c1c, #fff, #181818, #fff, #101010, #fff);
   #about .logo.dark {
+    display: block;
+  }
+
+  #toggle-theme .icon.light {
     display: block;
   }
 }
 [data-theme="light"] {
   @include page(#ff8000, #fff, #fff, #101010, #e6e6e6, #101010, #101010, #fff);
   #about .logo.light {
+    display: block;
+  }
+  #toggle-theme .icon.dark {
     display: block;
   }
 }

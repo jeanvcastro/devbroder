@@ -7,6 +7,7 @@ const path = require("path");
 module.exports = {
   mode: mode,
   entry: "./src/js/index.js",
+  devtool: "source-map",
   output: {
     clean: true,
     filename: "assets/js/bundle.min.js"
