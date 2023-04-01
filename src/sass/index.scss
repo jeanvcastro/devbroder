@@ -139,11 +139,12 @@ $gutter-width: 48px;
   }
 
   .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    padding: 0 24px;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
 
     a {
       font-family: $font-montserrat;
