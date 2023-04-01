@@ -5,16 +5,24 @@ feather.replace();
 
 //set theme based in user preference
 const html = document.documentElement;
+const toggleTheme = document.querySelector("#toggle-theme");
+
+const lightMessage = "Mudar para tema claro";
+const darkMessage = "Mudar para tema escuro";
+
 const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 if (prefersDark) {
   html.setAttribute("data-theme", "dark");
+  toggleTheme.title = lightMessage;
 } else {
   html.setAttribute("data-theme", "light");
+  toggleTheme.title = darkMessage;
 }
-const toggleTheme = document.querySelector("#toggle-theme");
+
 toggleTheme.addEventListener("click", () => {
   const currentTheme = html.getAttribute("data-theme");
   const newTheme = currentTheme === "dark" ? "light" : "dark";
+  toggleTheme.title = newTheme === "dark" ? lightMessage : darkMessage;
   html.setAttribute("data-theme", newTheme);
 });
 
