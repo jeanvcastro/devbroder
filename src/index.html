@@ -18,146 +18,172 @@
     <link rel="manifest" href="manifest.json" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="menu">
-        <a href="#home">Início</a>
-        <a href="#concepts">Conceitos</a>
-        <a href="#services">O que fazemos</a>
-        <a href="#contact">Fale conosco</a>
+    <header>
+      <nav class="navbar">
         <button id="toggle-collapse"><i class="fa-solid fa-bars"></i></button>
-      </div>
+      </nav>
       <div id="collapse">
-        <a href="#home">Início</a>
-        <a href="#concepts">Conceitos</a>
+        <a href="#about">Início</a>
         <a href="#services">O que fazemos</a>
+        <a href="#concepts">Conceitos</a>
         <a href="#contact">Fale conosco</a>
       </div>
-    </nav>
+    </header>
 
-    <main>
-      <section id="home">
-        <video autoplay muted loop id="video-background">
-          <source src="/assets/video/background.mp4" type="video/mp4" />
-        </video>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <h1>E aí, beleza?</h1>
-              <p>
-                Bora falar da DevBroder? Somos uma empresa focada no desenvolvimento de software artesanal para
-                startups.
-                <br />
-                <br />
-                Com nossa experiência e qualificação, oferecemos soluções personalizadas para cada projeto.
-              </p>
-            </div>
-            <div class="col">
+    <section id="about">
+      <div class="container">
+        <div class="clear-fix"></div>
+        <div class="row">
+          <div class="col">
+            <a href="#concepts" class="badge">Sobre</a>
+            <div class="clear-fix"></div>
+            <h1>E aí, beleza?</h1>
+            <div class="clear-fix"></div>
+            <p>
+              Bora falar da DevBroder? Somos uma empresa focada no desenvolvimento de software artesanal para startups.
+              <br />
+              <br />
+              Com nossa experiência e qualificação, oferecemos soluções personalizadas para cada projeto.
+            </p>
+          </div>
+          <div class="col">
+            <div class="logo-container">
               <img class="logo" src="/assets/img/logo.svg" alt="DevBroder Logo" />
             </div>
           </div>
         </div>
-      </section>
-      <section id="concepts">
-        <div class="container">
-          <div class="row">
-            <div class="col"><h2>Conceitos</h2></div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <h3>O que significa o nome da empresa?</h3>
-              <p>
-                <b>Dev</b> é uma abreviação de <em>developer</em>, que significa desenvolvedor em inglês, e representa a
-                nossa paixão por desenvolver soluções tecnológicas inovadoras.
-              </p>
-              <p><b>BR</b> é a abreviação de Brasil, que representa a nossa essência brasileira.</p>
-              <p>
-                E <b>Broder</b> é uma palavra abrasileirada derivada de <em>brother</em>, que significa irmão em inglês,
-                e representa o nosso compromisso em ajudar nossos clientes como um amigo próximo, alguém que está sempre
-                disposto a colaborar e encontrar as melhores soluções juntos.
-              </p>
-            </div>
-            <div class="col">
-              <h3>O que é desenvolvimento sofware artesanal?</h3>
-              <p>
-                É o tipo de desenvolvimento de software que se concentra na qualidade, na atenção aos detalhes e no
-                cuidado com o processo de criação.
-              </p>
-              <p>
-                Assim como um artesão que cria um objeto à mão, o desenvolvimento de software artesanal envolve a
-                criação de software personalizado, que é cuidadosamente projetado e construído de acordo com as
-                necessidades específicas do cliente ou usuário final.
-              </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <h3>Que diferença isso faz?</h3>
-              <p>
-                Usar boas práticas de desenvolvimento faz com que o software seja mais confiável, seguro, rápido e fácil
-                de usar.
-              </p>
-              <p>
-                Isso significa que o usuário final terá uma experiência melhor com o software, com menos problemas e
-                falhas.
-              </p>
-              <p>Além disso, o software será mais fácil de manter e atualizar, o que pode aumentar sua vida útil.</p>
-              <p>
-                Então, se você quer criar um software que as pessoas gostem de usar e confiem, é muito importante que
-                esses conceitos sejam levados em consideração.
-              </p>
-            </div>
-            <div class="col"></div>
-          </div>
-        </div>
-      </section>
-      <section id="services">
+        <div class="clear-fix"></div>
+      </div>
+    </section>
+    <section id="services">
+      <div class="container">
+        <div class="clear-fix"></div>
         <h2>O que fazemos</h2>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="service"><i class="fa-solid fa-code"></i> Desenvolvimento de software sob demanda</div>
-            </div>
-            <div class="col">
-              <div class="service"><i class="fa-solid fa-globe"></i> Desenvolvimento de sistemas web</div>
-            </div>
-            <div class="col">
-              <div class="service">
-                <i class="fa-solid fa-mobile-screen-button"></i> Desenvolvimento de aplicativos móveis
-              </div>
-            </div>
-            <div class="col">
-              <div class="service"><i class="fa-solid fa-handshake"></i> Consultoria em tecnologia</div>
-            </div>
+        <div class="clear-fix"></div>
+        <div class="service">
+          <div class="icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div>
+            <h5>Desenvolvimento de sistemas web</h5>
+            <div class="subtitle">Soluções web personalizadas para o seu negócio</div>
           </div>
         </div>
-      </section>
-      <section id="contact">
-        <div class="container">
-          <div class="row">
-            <h2>Fale conosco</h2>
+        <div class="clear-fix half"></div>
+        <div class="service right">
+          <div class="icon">
+            <i class="fa-solid fa-mobile-screen-button"></i>
           </div>
-          <div class="row">
-            <div class="col">
-              <a href="https://www.linkedin.com/in/jeanvcastro" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin"></i> LinkedIn
-              </a>
-            </div>
-            <div class="col">
-              <a href="https://github.com/jeanvcastro" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
-            <div class="col">
-              <a href="https://api.whatsapp.com/send?phone=5524998345779" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-              </a>
-            </div>
+          <div>
+            <h5>Desenvolvimento de aplicativos móveis</h5>
+            <div class="subtitle">Desenvolvimento de aplicativos iOS e Android</div>
           </div>
         </div>
-      </section>
-    </main>
+        <div class="clear-fix half"></div>
+        <div class="service">
+          <div class="icon">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <div>
+            <h5>Consultoria em tecnologia</h5>
+            <div class="subtitle">Orientação especializada em tecnologia</div>
+          </div>
+        </div>
+        <div class="clear-fix"></div>
+      </div>
+    </section>
+    <section id="concepts">
+      <div class="container">
+        <div class="clear-fix"></div>
+        <h2>Conceitos</h2>
+        <div class="clear-fix"></div>
+        <div class="row">
+          <div class="col">
+            <h3>O que significa o nome da empresa?</h3>
+            <div class="clear-fix half"></div>
+            <p>
+              <b>Dev</b> é uma abreviação de <em>developer</em>, que significa desenvolvedor em inglês, e representa a
+              nossa paixão por desenvolver soluções tecnológicas inovadoras.
+            </p>
+            <p><b>BR</b> é a abreviação de Brasil, que representa a nossa essência brasileira.</p>
+            <p>
+              E <b>Broder</b> é uma palavra abrasileirada derivada de <em>brother</em>, que significa irmão em inglês, e
+              representa o nosso compromisso em ajudar nossos clientes como um amigo próximo, alguém que está sempre
+              disposto a colaborar e encontrar as melhores soluções juntos.
+            </p>
+
+            <div class="clear-fix"></div>
+          </div>
+          <div class="col">
+            <h3>O que é desenvolvimento sofware artesanal?</h3>
+            <div class="clear-fix half"></div>
+            <p>
+              É o tipo de desenvolvimento de software que se concentra na qualidade, na atenção aos detalhes e no
+              cuidado com o processo de criação.
+            </p>
+            <p>
+              Assim como um artesão que cria um objeto à mão, o desenvolvimento de software artesanal envolve a criação
+              de software personalizado, que é cuidadosamente projetado e construído de acordo com as necessidades
+              específicas do cliente ou usuário final.
+            </p>
+
+            <div class="clear-fix"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3>Que diferença isso faz?</h3>
+            <div class="clear-fix half"></div>
+            <p>
+              Usar boas práticas de desenvolvimento faz com que o software seja mais confiável, seguro, rápido e fácil
+              de usar.
+            </p>
+            <p>
+              Isso significa que o usuário final terá uma experiência melhor com o software, com menos problemas e
+              falhas.
+            </p>
+            <p>Além disso, o software será mais fácil de manter e atualizar, o que pode aumentar sua vida útil.</p>
+            <p>
+              Então, se você quer criar um software que as pessoas gostem de usar e confiem, é muito importante que
+              esses conceitos sejam levados em consideração.
+            </p>
+          </div>
+          <div class="col"></div>
+        </div>
+        <div class="clear-fix"></div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="clear-fix"></div>
+      <div class="container">
+        <h2>Fale conosco</h2>
+        <div class="clear-fix"></div>
+        <div class="row">
+          <div class="col">
+            <a href="https://api.whatsapp.com/send?phone=5524998345779" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.linkedin.com/in/jeanvcastro" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/jeanvcastro" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="clear-fix"></div>
+    </section>
     <footer>
-      <p>© 2023 DevBroder - Todos os direitos reservados</p>
+      <div class="clear-fix half"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>© 2023 DevBroder - Todos os direitos reservados</p>
+          </div>
+        </div>
+      </div>
+      <div class="clear-fix half"></div>
     </footer>
   </body>
 </html>

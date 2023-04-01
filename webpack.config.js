@@ -30,10 +30,6 @@ module.exports = {
         {
           from: "./src/img/**/*.{png,jpg,jpeg,gif,svg}",
           to: "assets/img/[name][ext]?[fullhash]"
-        },
-        {
-          from: "./src/video/**/*.{mp4,webm,ogg}",
-          to: "assets/video/[name][ext]?[fullhash]"
         }
       ]
     })
