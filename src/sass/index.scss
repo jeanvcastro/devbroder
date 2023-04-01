@@ -218,6 +218,7 @@ $gutter-width: 48px;
     }
 
     .logo {
+      display: none;
       margin-top: 64px;
       width: 260px;
     }
@@ -354,7 +355,13 @@ html:not([data-theme]) {
 
 [data-theme="dark"] {
   @include page(#ff8000, #fff, #101010, #fff, #0c0c0c, #fff, #000, #fff);
+  #about .logo.dark {
+    display: block;
+  }
 }
 [data-theme="light"] {
   @include page(#ff8000, #fff, #fff, #101010, #e6e6e6, #101010, #101010, #fff);
+  #about .logo.light {
+    display: block;
+  }
 }
