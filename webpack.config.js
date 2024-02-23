@@ -19,8 +19,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      hash: true
-      // favicon: "./src/img/favicon.ico"
+      hash: true,
+      favicon: "./src/img/favicon.ico"
     }),
     new CopyWebpackPlugin({
       patterns: [
