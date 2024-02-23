@@ -1,392 +1,160 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Neue+Haas+Grotesk+Display:400,500,700,800&display=swap");
 
-// Fonts
-$font-montserrat: "Montserrat", sans-serif;
-$font-open-sans: "Open Sans", sans-serif;
+$body-background: #f2f0e4;
+$text-color: #000000;
+$accent-color: #ff4800;
+$font-family: "Neue Haas Grotesk Display", sans-serif;
 
-// Grid
-$gutter-width: 48px;
+@mixin container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 11.25rem;
 
-@mixin page(
-  $primary-bg,
-  $primary-color,
-  $body-bg,
-  $body-color,
-  $body-secondary-bg,
-  $body-secondary-color,
-  $footer-bg,
-  $footer-color
-) {
-  $body-contrast-100: if(lightness($body-bg) >= 50, darken($body-bg, 5%), lighten($body-bg, 5%));
-  $body-contrast-200: if(lightness($body-bg) >= 50, darken($body-bg, 10%), lighten($body-bg, 10%));
+  @media screen and (max-width: 1200px) {
+    padding: 0 2.5rem;
+  }
 
-  html,
-  body {
-    height: 100vh;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: $font-open-sans;
+  @media screen and (max-width: 576px) {
+    padding: 0 1.5rem;
+  }
+}
+
+body {
+  background-color: $body-background;
+  color: $text-color;
+  font-family: $font-family;
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  @media screen and (max-width: 576px) {
     font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-    color: $body-color;
-    background-color: $body-bg;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+  }
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+header {
+  @include container;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  height: 7.75rem;
+
+  @media screen and (max-width: 576px) {
+    height: 5.75rem;
+  }
+}
+
+.avatar {
+  height: 3.125rem;
+}
+
+.logotype {
+  width: 30rem;
+  margin: 1.125rem 0;
+
+  &.dark {
+    display: none;
   }
 
-  header {
-    position: relative;
+  @media screen and (max-width: 576px) {
+    width: 100%;
   }
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-    text-transform: uppercase;
-    font-family: $font-montserrat;
-    line-height: 1;
+#theme-toggle {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  .dark {
+    display: none;
   }
+}
 
-  h1 {
-    font-size: 48px;
-    @media (max-width: 576px) {
-      font-size: 36px;
+main {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+
+  @media screen and (max-width: 576px) {
+    gap: 0;
+  }
+}
+
+p {
+  margin: 1.125rem 0;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: 1.5rem 0;
+  background-color: $text-color;
+
+  @media screen and (max-width: 576px) {
+    margin: 1rem 0;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.125rem 0 6rem 0;
+  font-size: 18px;
+
+  .contact-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    a {
+      display: flex;
+      align-items: center;
     }
   }
 
-  h2 {
-    font-size: 36px;
-    @media (max-width: 576px) {
-      font-size: 24px;
-    }
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: 1.125rem 0 4rem 0;
   }
 
-  h3 {
-    font-size: 18px;
+  @media screen and (max-width: 576px) {
+    font-size: 12px;
   }
+}
 
-  h5 {
-    font-size: 16px;
-  }
+a {
+  color: $text-color;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-  p {
-    margin: 0;
+body.dark-mode {
+  background-color: $text-color;
+  color: $body-background;
+
+  .divider {
+    background-color: #545751;
   }
 
   a {
-    color: inherit;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  svg {
-    flex-shrink: 0;
-  }
-
-  .clear-fix {
-    height: 64px;
-
-    &.half {
-      height: 32px;
-    }
-  }
-
-  .container {
-    margin: 0 auto;
-    padding-left: calc($gutter-width / 2);
-    padding-right: calc($gutter-width / 2);
-
-    // Breakpoints
-    @media (max-width: 576px) {
-      max-width: 100%;
-    }
-
-    @media (min-width: 577px) and (max-width: 768px) {
-      max-width: 540px;
-    }
-
-    @media (min-width: 769px) and (max-width: 992px) {
-      max-width: 720px;
-    }
-
-    @media (min-width: 993px) and (max-width: 1200px) {
-      max-width: 960px;
-    }
-
-    @media (min-width: 1201px) {
-      max-width: 1140px;
-    }
-  }
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: calc(($gutter-width / 2) * -1);
-    margin-right: calc(($gutter-width / 2) * -1);
-  }
-
-  .col {
-    flex-grow: 1;
-    flex-basis: 0;
-    max-width: 100%;
-    padding-left: calc($gutter-width / 2);
-    padding-right: calc($gutter-width / 2);
-  }
-
-  .navbar {
-    .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 80px;
-    }
-
-    a {
-      font-family: $font-montserrat;
-      font-size: 16px;
-      font-weight: 500;
-    }
-
-    button {
-      all: unset;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    #toggle-collapse {
-      background-color: $body-bg;
-      color: $body-color;
-
-      &:hover {
-        background-color: $body-contrast-100;
-      }
-
-      &:active {
-        background-color: $body-contrast-200;
-      }
-    }
-
-    #toggle-theme {
-      .icon {
-        display: none;
-
-        &.dark {
-          color: #000;
-        }
-
-        &.light {
-          color: #ffb200;
-        }
-      }
-    }
-  }
-
-  #collapse {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: $body-secondary-bg;
-    color: $body-secondary-color;
-
-    &.show {
-      display: flex;
-    }
-
-    a {
-      width: 100%;
-      padding: 24px;
-      text-align: center;
-      font-weight: 500;
-    }
-  }
-
-  .badge {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $primary-bg;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: $primary-color;
-  }
-
-  #about {
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      height: 100%;
-    }
-
-    .logo {
-      display: none;
-      margin-top: 64px;
-      width: 260px;
-    }
-
-    @media (max-width: 992px) {
-      .logo {
-        width: 220px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      text-align: center;
-
-      .col {
-        flex-basis: 100%;
-      }
-
-      .logo {
-        margin-top: 32px;
-        width: 180px;
-      }
-    }
-  }
-
-  #services {
-    .service {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-
-      .icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: 0;
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        background-color: $body-contrast-100;
-
-        svg {
-          width: 36px;
-          height: 36px;
-        }
-      }
-
-      &.right {
-        justify-content: flex-end;
-
-        .icon {
-          background-color: $primary-bg;
-
-          svg {
-            color: $primary-color;
-          }
-        }
-      }
-    }
-
-    @media (max-width: 768px) {
-      .service {
-        .icon {
-          width: 80px;
-          height: 80px;
-          svg {
-            width: 24px;
-            height: 24px;
-          }
-        }
-
-        &.right {
-          justify-content: flex-start;
-        }
-      }
-    }
-  }
-
-  #concepts {
-    b,
-    em {
-      color: $primary-bg;
-    }
-
-    @media (max-width: 768px) {
-      .col {
-        flex-basis: 100%;
-      }
-    }
-  }
-
-  #contact {
-    background-color: $body-secondary-bg;
-    color: $body-secondary-color;
-
-    .col {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 48px;
-
-      a {
-        font-size: 24px;
-        text-transform: none;
-
-        @media (max-width: 576px) {
-          font-size: 18px;
-        }
-      }
-
-      @media (max-width: 424px) {
-        gap: 24px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      text-align: center;
-      .col {
-        justify-content: center;
-      }
-    }
-  }
-
-  footer {
-    background-color: $footer-bg;
-    color: $footer-color;
-    @media (max-width: 768px) {
-      text-align: center;
-    }
-  }
-}
-
-// Theme
-
-html:not([data-theme]) {
-  display: none;
-}
-
-[data-theme="dark"] {
-  @include page(#ff8000, #fff, #1c1c1c, #fff, #181818, #fff, #101010, #fff);
-  #about .logo.dark {
-    display: block;
-  }
-
-  #toggle-theme .icon.light {
-    display: block;
-  }
-}
-[data-theme="light"] {
-  @include page(#ff8000, #fff, #fff, #101010, #e6e6e6, #101010, #101010, #fff);
-  #about .logo.light {
-    display: block;
-  }
-  #toggle-theme .icon.dark {
-    display: block;
+    color: $body-background;
   }
 }
