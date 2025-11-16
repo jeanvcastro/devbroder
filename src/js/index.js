@@ -21,6 +21,11 @@ const applyTheme = dark => {
   document.querySelectorAll(".light").forEach(element => {
     element.style.display = dark ? "none" : "block";
   });
+
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeColorMeta) {
+    themeColorMeta.setAttribute("content", dark ? "#000000" : "#f2f0e4");
+  }
 };
 
 themeToggle.addEventListener("click", () => {
