@@ -1,3 +1,4 @@
+@import url("reset.scss");
 @import url("https://fonts.googleapis.com/css?family=Neue+Haas+Grotesk+Display:400,500,700,800&display=swap");
 
 $body-background: #f2f0e4;
@@ -8,14 +9,17 @@ $font-family: "Neue Haas Grotesk Display", sans-serif;
 @mixin container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 11.25rem;
+  padding-left: 11.25rem;
+  padding-right: 11.25rem;
 
   @media screen and (max-width: 1200px) {
-    padding: 0 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   @media screen and (max-width: 576px) {
-    padding: 0 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
@@ -23,10 +27,8 @@ body {
   background-color: $body-background;
   color: $text-color;
   font-family: $font-family;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.4;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   max-width: 100%;
   overflow-x: hidden;
@@ -88,9 +90,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.125rem;
+  min-height: calc(100vh - 248px);
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   @media screen and (max-width: 576px) {
     gap: 0;
+    min-height: calc(100vh - 216px);
   }
 }
 
@@ -98,23 +104,15 @@ p {
   margin: 1.125rem 0;
 }
 
-.divider {
-  width: 100%;
-  height: 1px;
-  margin: 1.5rem 0;
-  background-color: $text-color;
+footer {
+  @include container;
 
-  @media screen and (max-width: 576px) {
-    margin: 1rem 0;
-  }
-}
-
-.footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  margin: 1.125rem 0 6rem 0;
+  height: 7.5rem;
+  border-top: 1px solid $text-color;
   font-size: 18px;
 
   .contact-links {
@@ -131,8 +129,8 @@ p {
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
     align-items: flex-start;
-    gap: 2rem;
-    margin: 1.125rem 0 4rem 0;
+    gap: 1rem;
+    padding: 24px;
   }
 
   @media screen and (max-width: 576px) {
