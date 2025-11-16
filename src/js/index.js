@@ -1,8 +1,15 @@
 import "../sass/index.scss";
 
-const userPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+const getInitialTheme = () => {
+  const saved = localStorage.getItem("darkMode");
+  if (saved !== null) {
+    return saved === "true";
+  }
+  return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+};
+
 const themeToggle = document.getElementById("theme-toggle");
-let darkMode = userPrefersDark;
+let darkMode = getInitialTheme();
 
 const applyTheme = dark => {
   document.body.classList.toggle("dark-mode", dark);
@@ -22,10 +29,6 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("darkMode", darkMode);
 });
 
-if (localStorage.getItem("darkMode") !== null) {
-  darkMode = localStorage.getItem("darkMode") === "true";
-} else {
-  localStorage.setItem("darkMode", darkMode);
-}
-
 applyTheme(darkMode);
+
+document.getElementById("copyright").textContent = `© ${new Date().getFullYear()} DevBroder - Todos os direitos reservados`;

@@ -100,6 +100,15 @@ main {
   }
 }
 
+.logo-container {
+  display: flex;
+  gap: 0.5rem;
+
+  sup {
+    margin-top: 1.5rem;
+  }
+}
+
 p {
   margin: 1.125rem 0;
 }
